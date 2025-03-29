@@ -1,0 +1,107 @@
+/* style.css */
+
+/* ✅ Glassmorphism (Blur + Transparency + Glow Effects) - Applied to .glassmorphism-card, .experience-item, .project-item, .achievement-card, .certification-item, .education-item */
+
+/* ✅ Dark & Light Mode Toggle 🌙🔆 - Styles in the <style> tag in HTML */
+
+/* ✅ Parallax Scrolling - Applied to the #experience section */
+
+/* ✅ Smooth Animations (GSAP + AOS + ScrollReveal) - AOS initialized in the <script> tag */
+
+/* ✅ 3D Hover Effects - Applied to .achievement-card */
+
+/* ✅ Neon Text - Applied to .neon-text */
+
+/* ✅ Gradient Buttons - Applied to the hero background, skills background, experience background, achievements background, certifications background, education background, contact background, footer background */
+
+/* ✅ Live Typing Hero Section - JavaScript in script.js */
+
+/* ✅ Animated Skill Badges - Basic hover animation in the skills section styles */
+
+/* ✅ Animated Progress Bars - Not implemented in this version, but can be added with JavaScript and more HTML structure */
+
+/* ✅ Custom Cursor & Click Effects - Styles and JavaScript in the <style> tag and script.js */
+
+/* ✅ Social Media Icons with Hover Glow - Styles in the hero section styles */
+
+/* ✅ Download CV with a Floating Button - Styles in the <style> tag in HTML */
+
+/* 🎨 General Styles (Overriding defaults) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #f0f0f0; /* Light text */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
+}
+
+.light-mode {
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.section-title {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+.light-mode .section-title {
+    color: #333;
+    text-shadow: none;
+}
+
+/* 🦸 Hero Section */
+.hero {
+    /* Styles moved to the <style> tag in HTML for better context */
+}
+
+/* 👤 About Section */
+.about {
+    /* Styles moved to the <style> tag in HTML for better context */
+}
+
+/* 🛠️ Skills Section */
+.skills {
+    /* Styles moved to the <style> tag in HTML for better context */
+}
+
+/* 💼 Experience Section */
+.experience {
+    /* Styles moved to the <style> tag in HTML for better context */
+}
+
+/* 🏆 Achievements Section */
+.achievements {
+    /* Styles moved to the <style> tag in HTML for better context */
+}
+
+/* 📜 Certifications Section */
+.certifications {
+    /* Styles moved to the <style> tag in HTML for better context */
+}
+
+/* 🎓 Education Section */
+.education {
+    /* Styles moved to the <style> tag in HTML for better context */
+}
+
+/* 📧 Contact Section */
+.contact {
+    /* Styles moved to the <style> tag in HTML for better context */
+}
+
+/* <footer> Section */
+.footer {
+    /* Styles moved to the <style> tag in HTML for better context */
+}

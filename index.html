@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdul Haseeb | Generative AI & Data Science Engineer</title>
+    <link rel="icon" href="YOUR_PROFILE_PICTURE_URL_HERE.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <style>
+        /* 🎨 Default Styles (will be overridden by style.css for better organization) */
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Default dark background */
+            color: #f0f0f0; /* Default light text */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .light-mode {
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* 🌙🔆 Dark/Light Mode Toggle Button Styles */
+        #darkModeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: #f0f0f0;
+            font-size: 1.5em;
+            cursor: pointer;
+            z-index: 1000;
+            transition: color 0.3s ease;
+        }
+
+        .light-mode #darkModeToggle {
+            color: #333;
+        }
+
+        /* ✨ Custom Cursor Styles */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #00ffff; /* Neon cyan */
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1001;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease-out;
+        }
+
+        .click-effect {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 255, 255, 0.5); /* Neon cyan with transparency */
+            border-radius: 50%;
+            animation: clickEffect 0.5s ease-out forwards;
+            pointer-events: none;
+            z-index: 1002;
+        }
+
+        @keyframes clickEffect {
+            0% {
+                transform: translate(-50%, -50%) scale(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="darkModeToggle">🌙</button>
+
+    <div class="custom-cursor"></div>
+
+    <a href="YOUR_CV_URL_HERE.pdf" download class="floating-cv-button">
+        <i class="fas fa-download"></i> Download CV
+    </a>
+    <style>
+        .floating-cv-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #00ffff; /* Neon cyan */
+            color: #121212;
+            padding: 15px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 255, 255, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .floating-cv-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 255, 255, 0.5);
+        }
+
+        .floating-cv-button i {
+            margin-right: 10px;
+        }
+    </style>
+
+    <div id="particles-js" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="neon-text">ABDUL HASEEB</h1>
+            <p class="hero-subtitle"><span class="typed-text"></span><span class="cursor">|</span></p>
+            <div class="social-icons">
+                <a href="YOUR_LINKEDIN_URL_HERE" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="YOUR_GITHUB_URL_HERE" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="YOUR_WEBSITE_URL_HERE" target="_blank" aria-label="Website"><i class="fas fa-globe"></i></a>
+                <a href="mailto:ah673277@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+923261087203" aria-label="Phone"><i class="fas fa-phone"></i></a>
+            </div>
+        </div>
+    </section>
+    <style>
+        .hero {
+            background: linear-gradient(45deg, #1a1a1a, #222); /* Dark gradient background */
+            color: #f0f0f0;
+            text-align: center;
+            padding: 150px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .neon-text {
+            font-size: 3em;
+            color: #fff;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+            margin-bottom: 20px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .typed-text {
+            color: #00ffff;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            background-color: #00ffff;
+            margin-left: 5px;
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 0 15px;
+            font-size: 1.8em;
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #00ffff;
+            transform: scale(1.1);
+        }
+    </style>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="glassmorphism-card" data-aos="fade-right" data-aos-duration="1000">
+                <p>👋 Hi, I'm Abdul Haseeb, an aspiring <span class="highlight">Generative AI & Data Science Engineer</span> with a strong passion for leveraging the power of AI to solve real-world problems. I'm also a <span class="highlight">Prompt Engineer</span> and <span class="highlight">AI Developer</span>, constantly exploring the exciting frontiers of artificial intelligence.</p>
+                <p>My journey involves hands-on experience in <span class="highlight">AI model deployment, FastAPI, and Data Engineering</span>. I'm particularly enthusiastic about <span class="highlight">Generative AI, LLMs, and Predictive Analytics</span>. I thrive on challenges and actively participate in hackathons to stay at the forefront of AI innovation.</p>
+                <p>I'm a proactive problem-solver with a proven track record of building impactful AI-powered projects. My goal is to contribute meaningfully to the AI community and help shape the future through intelligent solutions. Let's connect and explore the transformative potential of AI together! 🌍💡</p>
+            </div>
+        </div>
+    </section>
+    <style>
+        .about {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a, #222);
+            color: #f0f0f0;
+        }
+
+        .about .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 40px;
+            color: #00ffff;
+        }
+
+        .glassmorphism-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 40px;
+            line-height: 1.8;
+            color: #f0f0f0;
+        }
+
+        .light-mode .glassmorphism-card {
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .highlight {
+            color: #00ffff;
+            font-weight: bold;
+        }
+    </style>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-badge">Python</div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>AI Tools</h3>
+                    <div class="skill-badge">Gen AI</div>
+                    <div class="skill-badge">AI Models</div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3>Web & App Development</h3>
+                    <div class="skill-badge">Streamlit</div>
+                    <div class="skill-badge">Gradio</div>
+                    <div class="skill-badge">FastAPI</div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <h3>Data Management</h3>
+                    <div class="skill-badge">Faiss</div>
+                    <div class="skill-badge">MongoDB</div>
+                    <div class="skill-badge">Postgres</div>
+                    <div class="skill-badge">SQL</div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+                    <h3>Cloud Platforms</h3>
+                    <div class="skill-badge">Hugging Face</div>
+                    <div class="skill-badge">Google Colab</div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="600">
+                    <h3>LLMs</h3>
+                    <div class="skill-badge">LLaMA</div>
+                    <div class="skill-badge">Mistral</div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="700">
+                    <h3>Medical AI</h3>
+                    <div class="skill-badge">PubMedBERT</div>
+                    <div class="skill-badge">Med-PaLM 2</div>
+                    <div class="skill-badge">WhisperAI</div>
+                </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="800">
+                    <h3>Deployment & Tools</h3>
+                    <div class="skill-badge">GitHub</div>
+                    <div class="skill-badge">Poetry</div>
+                    <div class="skill-badge">Rasa</div>
+                    <div class="skill-badge">APIs</div>
+                    <div class="skill-badge">JSON</div>
+                </div>
+                </div>
+        </div>
+    </section>
+    <style>
+        .skills {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #222, #1a1a1a);
+            color: #f0f0f0;
+        }
+
+        .skills .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .skill-category h3 {
+            color: #00ffff;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .skill-badge {
+            background-color: rgba(0, 255, 255, 0.1);
+            color: #00ffff;
+            border: 1px solid #00ffff;
+            padding: 10px 15px;
+            border-radius: 20px;
+            display: inline-block;
+            margin: 5px;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            background-color: #00ffff;
+            color: #121212;
+        }
+
+        .light-mode .skill-badge {
+            background-color: rgba(0, 0, 0, 0.05);
+            color: #333;
+            border-color: #333;
+        }
+
+        .light-mode .skill-badge:hover {
+            background-color: #333;
+            color: #f8f8f8;
+        }
+    </style>
+
+    <section id="experience" class="experience" data-aos="fade-down" data-aos-duration="1000">
+        <div class="parallax-bg" style="background-image: url('YOUR_BACKGROUND_IMAGE_URL_HERE.jpg');"></div>
+        <div class="container">
+            <h2 class="section-title">Work Experience & Projects</h2>
+            <div class="experience-item">
+                <h3>AI Developer | Self-Initiated Projects | 2024 - Present</h3>
+                <p>Developed AI applications focused on daily life problems in Educations, Business, HealthCare.</p>
+                <p>Utilized AI models to enhance generative performance.</p>
+                <p>Participated in hackathons as a team leader.</p>
+                <p>Mentored aspiring developers in Python programming and real-world AI applications.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Accountant & Graphic Designer</h3>
+                <p>Managed financial records, budgeting, and reporting for various clients.</p>
+                <p>Designed professional graphics, branding materials, and marketing assets.</p>
+            </div>
+            <h3 class="subsection-title">Projects</h3>
+            <div class="project-item">
+                <h4>RAG-Based Code Generator</h4>
+                <p>Enabled users to generate clean, efficient code across multiple languages.</p>
+                <p>Provided a user-friendly interface for task input and seamless code generation.</p>
+            </div>
+            <div class="project-item">
+                <h4>AI Llama-Based Trading Indicator | CoinMarketCap API, Streamlit</h4>
+                <p>Implemented real-time buy/sell signals for cryptocurrency trading.</p>
+                <p>Incorporated currency conversion features and an intuitive user interface.</p>
+            </div>
+            <div class="project-item">
+                <h4>Data Extraction and Accounting Automation | Python, OCR, Excel</h4>
+                <p>Created a pipeline to extract text from images and automate debit/credit calculations.</p>
+                <p>Enhanced workflow efficiency through automated data storage and operation.</p>
+            </div>
+            <div class="project-item">
+                <h4>Smart Cleaner: Remove all noise and meaningless data from raw datasets.</h4>
+            </div>
+            <div class="project-item">
+                <h4>Epilepsy & Seizure Prediction Chatbot</h4>
+                <p>Leveraged <strong>LLaMA & PubMedBERT</strong> for medical predictions and recommendations.</p>
+            </div>
+            <div class="project-item">
+                <h4>Voice Call Bot for Medical Triage</h4>
+                <p>Integrated <strong>WhisperAI, PubMedBot, Rasa, and Med-PaLM 2</strong> to assess patient conditions and provide real-time guidance.</p>
+            </div>
+        </div>
+    </section>
+    <style>
+        .experience {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            color: #f0f0f0;
+        }
+
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            filter: blur(5px); /* Optional blur for the background */
+            transform: translateZ(-1px) scale(1.5); /* Parallax effect */
+        }
+
+        .experience .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .experience .section-title {
+            color: #00ffff;
+            margin-bottom: 40px;
+        }
+
+        .experience-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid #00ffff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .light-mode .experience-item {
+            background: rgba(0, 0, 0, 0.03);
+            border-left-color: #333;
+            color: #333;
+        }
+
+        .experience-item h3 {
+            color: #00ffff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .subsection-title {
+            color: #00ffff;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .project-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .light-mode .project-item {
+            background: rgba(0, 0, 0, 0.02);
+            color: #333;
+        }
+
+        .project-item h4 {
+            color: #00ffff;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+    </style>
+
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements & Hackathons</h2>
+            <div class="achievement-card-container">
+                <div class="achievement-card" data-aos="flip-left" data-aos-duration="1000">
+                    <i class="fas fa-trophy neon-icon"></i>
+                    <h3>Joined multiple international hackathons.</h3>
+                    <p>Actively participated in various global hackathons, showcasing problem-solving and collaborative skills.</p>
+                </div>
+                <div class="achievement-card" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="200">
+                    <i class="fas fa-code neon-icon"></i>
+                    <h3>Created AI based code generator supporting multi-language code generation.</h3>
+                    <p>Developed an innovative AI tool capable of generating code in multiple programming languages, enhancing developer productivity.</p>
+                </div>
+                <div class="achievement-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="400">
+                    <i class="fas fa-chart-line neon-icon"></i>
+                    <h3>Developed an AI Llama-based cryptocurrency trading indicator.</h3>
+                    <p>Built an AI-powered trading indicator using the Llama model, providing buy/sell signals and USD/PKR conversion for cryptocurrency trading.</p>
+                </div>
+                <div class="achievement-card" data-aos="flip-right" data-aos-duration="1000" data-aos-delay="600">
+                    <i class="fas fa-network-wired neon-icon"></i>
+                    <h3>AI for Connectivity Hackathon II</h3>
+                    <p>Developing <strong>AI-driven predictive network maintenance solutions</strong> to optimize connectivity.</p>
+                </div>
+                <div class="achievement-card" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="800">
+                    <i class="fas fa-brain neon-icon"></i>
+                    <h3>Epilepsy & Seizure Prediction Hackathon</h3>
+                    <p>Designed a <strong>chatbot with medical LLMs</strong> for real-time predictions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .achievements {
+            padding: 80px 0;
+            background: linear-gradient(45deg, #222, #1a1a1a);
+            color: #f0f0f0;
+        }
+
+        .achievements .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .achievement-card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .light-mode .achievement-card {
+            background: rgba(0, 0, 0, 0.03);
+            color: #333;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 255, 255, 0.2);
+        }
+
+        .neon-icon {
+            font-size: 2em;
+            color: #00ffff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .achievement-card h3 {
+            color: #00ffff;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certification-list">
+                <div class="certification-item" data-aos="fade-left" data-aos-duration="1000">
+                    <h3>Saylani Mass IT Training (SMIT)</h3>
+                    <p>Diploma in AI & Data Science (Ongoing)</p>
+                    <p>Specialization: Agentic AI, Backend Development, Data Sciences</p>
+                    <p>Key Projects: RAG-based Application, Applied AI apps, Cloud Based Apps.</p>
+                </div>
+                <div class="certification-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                    <h3>PAKANGELS, Aptech</h3>
+                    <p>Generative AI (Online Certificate)</p>
+                    <p>Focus Areas: Generative AI Models, AI implementation in business, RAG-based Application</p>
+                </div>
+                <div class="certification-item" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+                    <h3>iCodeGuru</h3>
+                    <p>Data Structures and Algorithms (DSA)</p>
+                    <p>Topics: Problem-solving with Python, Algorithm Optimization</p>
+                </div>
+                <div class="certification-item" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="600">
+                    <h3>PAKANGELS</h3>
+                    <p>Essential Generative AI & Prompt Engineering</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>
+        .certifications {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a, #222);
+            color: #f0f0f0;
+        }
+
+        .certifications .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .certification-list {
+            margin-top: 30px;
+        }
+
+        .certification-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #00ffff;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .light-mode .certification-item {
+            background: rgba(0, 0, 0, 0.03);
+            border-left-color: #333;
+            color: #333;
+        }
+
+        .certification-item h3 {
+            color: #00ffff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-item" data-aos="zoom-in" data-aos-duration="1000">
+                <h3>Bachelor of Science in Computer Science</h3>
+                <p>The University of Agriculture, Faisalabad</p>
+                <p>Sep 2020 - Jun 2024</p>
+                <p>CGPA: 3.35 / 4.00</p>
+            </div>
+        </div>
+    </section>
+    <style>
+        .education {
+            padding: 80px 0;
+            background: linear-gradient(45deg, #222, #1a1a1a);
+            color: #f0f0f0;
+        }
+
+        .education .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .education-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+        .light-mode .education-item {
+            background: rgba(0, 0, 0, 0.03);
+            color: #333;
+        }
+
+        .education-item h3 {
+            color: #00ffff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect!</h2>
+            <p class="contact-message">Open to AI/ML projects, collaborations, and research opportunities. Let's discuss how AI can transform the world! 🌍💡</p>
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Pakistan</p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:ah673277@gmail.com">ah673277@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> <a href="tel:+923261087203">+92 326 1087203</a></p>
+                <p><i class="fab fa-linkedin"></i> <a href="YOUR_LINKEDIN_URL_HERE" target="_blank">LinkedIn</a></p>
+                <p><i class="fab fa-github"></i> <a href="YOUR_GITHUB_URL_HERE" target="_blank">GitHub</a></p>
+                <p><i class="fas fa-globe"></i> <a href="YOUR_WEBSITE_URL_HERE" target="_blank">WebSite</a></p>
+            </div>
+        </div>
+    </section>
+    <style>
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #222, #1a1a1a);
+            color: #f0f0f0;
+            text-align: center;
+        }
+
+        .contact .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-message {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+
+        .contact-info a {
+            color: #00ffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #fff;
+        }
+
+        .contact-info i {
+            margin-right: 10px;
+            color: #00ffff;
+        }
+    </style>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Abdul Haseeb. All Rights Reserved. ✨ Portfolio Designed with ❤️</p>
+        </div>
+    </footer>
+    <style>
+        .footer {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9em;
+        }
+
+        .footer .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+
+    <script>
+        AOS.init({
+            once: true, // Whether animation should happen only once - while scrolling down
+            duration: 1000, // Values from 0 to 3000, with step 50ms
+            easing: 'ease-out-cubic', // Animation easing
+        });
+
+        // 🌠 Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00ffff' },
+                shape: { type: 'circle', stroke: { width: 0, color: '#000000' }, polygon: { nb_sides: 5 } },
+                opacity: { value: 0.5, random: true, anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false } },
+                size: { value: 3, random: true, anim: { enable: false, speed: 40, size_min: 0.1, sync: false } },
+                line_linked: { enable: true, distance: 150, color: '#00ffff', opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false, attract: { enable: false, rotateX: 600, rotateY: 1200 } }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'grab' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { grab: { distance: 140, line_linked: { opacity: 1 } }, bubble: { distance: 200, size: 40, duration: 2, opacity: 0.8, speed: 3 }, repulse: { distance: 250, duration: 0.4 }, push: { particles_nb: 4 }, remove: { particles_nb: 2 } }
+            },
+            retina_detect: true
+        });
+    </script>
+
+</body>
+</html>
