@@ -1,13 +1,13 @@
 // script.js
 
-// 🌙🔆 Dark/Light Mode Toggle Functionality
-const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
+// // 🌙🔆 Dark/Light Mode Toggle Functionality
+// const darkModeToggle = document.getElementById('darkModeToggle');
+// const body = document.body;
 
-darkModeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    darkModeToggle.textContent = body.classList.contains('light-mode') ? '🌙' : '🔆';
-});
+// darkModeToggle.addEventListener('click', () => {
+//     body.classList.toggle('light-mode');
+//     darkModeToggle.textContent = body.classList.contains('light-mode') ? '🌙' : '🔆';
+// });
 
 // ✨ Custom Cursor Functionality
 const cursor = document.querySelector('.custom-cursor');
@@ -37,7 +37,7 @@ bodyElement.addEventListener('mouseup', () => {
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = ["GENERATIVE AI & DATA SCIENCE ENGINEER", "PROMPT ENGINEER", "AI DEVELOPER"];
+const textArray = [ "CLOUD NATIVE APPLIED AI ENGINEER", "PROMPT ENGINEER", "AI DEVELOPER", "Accountant"];
 const typingDelay = 100;
 const erasingDelay = 50;
 const newTextDelay = 2000; // Delay between current text and next text
