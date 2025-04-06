@@ -37,7 +37,7 @@ bodyElement.addEventListener('mouseup', () => {
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-const textArray = [ "CLOUD NATIVE APPLIED AI ENGINEER", "PROMPT ENGINEER", "AI DEVELOPER", "Accountant"];
+const textArray = [ "CLOUD NATIVE APPLIED AI ENGINEER", "PROMPT ENGINEER", "Accountant"];
 const typingDelay = 100;
 const erasingDelay = 50;
 const newTextDelay = 2000; // Delay between current text and next text
